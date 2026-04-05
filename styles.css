@@ -1,7 +1,8 @@
 body {
 margin: 0;
-background-color: #121212;
+background-color: #f4f4f4;
 font-family: sans-serif;
+transition: 0.3s;
 }
 article {
 background-color: #252a34;
@@ -72,4 +73,35 @@ text-align: center;
     "nav"
     "main"
     "footer";
+}
+
+.modo-oscuro {
+display: flex;
+justify-content: flex-end;
+flex-wrap: wrap;
+}
+
+body.dark-mode {
+color: white;
+background-color: #1c1c1c;
+border: 1px solid #333;
+}
+
+.menu-lateral {
+position: fixed;
+top: 0;
+left: 0;
+width: 380px;
+height: 100%;
+background-color: #252a34;
+color: white;
+padding: 20px;
+z-index: 1000; /* Para que quede arriba del todo*/
+/* El truco: lo movemos 100% a la izquierda (fuera de la vista)*/
+transform: translateX(-100%);
+transition: 0.4s; /* Para que se deslice suave*/
+}
+
+.menu-lateral.abierto {
+transform: translateX(0);
 }
